@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'peliculas',
     'salas',
     'tarjetas',
+    'menu_principal',
     'API',
 ]
 
