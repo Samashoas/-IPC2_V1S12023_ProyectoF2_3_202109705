@@ -51,7 +51,7 @@ def getPeliculas():
                         "anio": "2006",
                         "fecha": "29/06/2023",
                         "hora": "07:00",
-                        "imagen": "qwerty789",
+                        "imagen": "https://c8za76.p3cdn2.secureserver.net/wp-content/uploads/2017/02/BladeRunner_Feature-678x381.jpg",
                         "precio": "42"
                         },
                         {
@@ -61,8 +61,8 @@ def getPeliculas():
                         "anio": "2004",
                         "fecha": "15/07/2022",
                         "hora": "15:00",
-                        "imagen": "qwerty789",
-                        "precio": "42"
+                        "imagen": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                        "precio": "44"
                         },
                         {
                         "Categoria": "Ciencia ficcion",
@@ -71,8 +71,8 @@ def getPeliculas():
                         "anio": "2002",
                         "fecha": "16/08/2002",
                         "hora": "17:00",
-                        "imagen": "qwerty789",
-                        "precio": "42"
+                        "imagen": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2021/08/19085635/gEU2QniE6E77NI6lCU6MxlNBvIx-scaled.jpg",
+                        "precio": "84"
                         }
                       ]
         else:
