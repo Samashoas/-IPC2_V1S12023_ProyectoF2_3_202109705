@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .no-records {
+            font-style: italic;
+            color: #777;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Gestión de Tarjetas</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'load_xmlT' %}">
+        {% csrf_token %}
+        <button type="submit">Cargar API</button>
+    </form>
+   
+    <h1>Lista de Tarjetas</h1>
+    <table>
+        <thead>
+            <th>Tipo</th>
+            <th>Número</th>
+            <th>Titular</th>
+            <th>Fecha de vencimiento</th>
+        </thead>
+        <tbody>
+            {% for tarjetachiquita in Tarjeta %}
+            <tr>
+                <td>{{ tarjetachiquita.tipo }}</td>
+                <td>{{ tarjetachiquita.numero }}</td>
+                <td>{{ tarjetachiquita.titular }}</td>
+                <td>{{ tarjetachiquita.fecha }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="no-records">No existen registros</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

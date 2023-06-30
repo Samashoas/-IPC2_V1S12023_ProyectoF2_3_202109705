@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gestion de Peliculas</title>
+    </head>
+    <body>
+        <form method="POST" action="{% url 'load_xmlS' %}">
+            {% csrf_token %}
+            <button type="submit">Cargar API</button>
+        </form>
+       
+        <h1>Lista de Salas</h1>
+        <table>
+            <thead>
+                <th>cine</th>
+                <th>numero</th>
+                <th>asientos</th>
+            </thead>
+            <tbody>
+                {% for  salachiquita in Salas %}
+                <tr>
+                    <td>{{  salachiquita.cine }}</td>
+                    <td>{{  salachiquita.numero }}</td>
+                    <td>{{  salachiquita.asientos }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>No existen registros</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

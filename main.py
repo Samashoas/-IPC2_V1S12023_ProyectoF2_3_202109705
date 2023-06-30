@@ -4,8 +4,8 @@ from ListaDE import*
 from ListaDES import*
 import xml.dom.minidom
 
-users = load_users_from_xml('Usuarios.xml')
-filmes = Es_cine('Pelis.xml')
+#users = load_users_from_xml('Usuarios.xml')
+#filmes = Es_cine('Pelis.xml')
 #inicio de sesion
 def sesion():
 

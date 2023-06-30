@@ -1,6 +1,18 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 
+class Movie:
+    def __init__(self, categoria, titulo, director, anio, fecha, hora, imagen, precio):
+        self.categoria = categoria
+        self.titulo = titulo
+        self.director = director
+        self.anio = anio
+        self.fecha = fecha
+        self.hora = hora
+        self.imagen = imagen
+        self.precio = precio
+        self.next = None
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -25,14 +37,22 @@ class DoublyCircularLinkedList:
             new_node.prev = last_node
             new_node.next = self.head
             self.head.prev = new_node
+    
+    def __iter__(self):
+        return self.loop()
+    
+    def loop(self):
+        if self.head is not None:
+            actual = self.head
+            while True:
+                yield actual.data
+                actual = actual.next
+                if actual == self.head:
+                    break
         
-
 def Es_cine(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
-
-    data_row = []
-    index = 1
 
     peli = DoublyCircularLinkedList()
 
@@ -46,12 +66,12 @@ def Es_cine(file_path):
             anio = pelicula.find('anio').text
             fecha = pelicula.find('fecha').text
             hora = pelicula.find('hora').text
-            pelicula_data = f"[{index}].Nombre: {nombre}, Titulo: {titulo}, Director: {director}, Año: {anio}, Fecha: {fecha}, Hora: {hora}"
+            imagen = pelicula.find('imagen').text
+            precio = pelicula.find('precio').text
+            pelicula_data = Movie(nombre, titulo, director, anio, fecha, hora, imagen, precio )
             peli.insert(pelicula_data)
-            data_row.append(pelicula_data)
-            index += 1
 
-    return data_row
+    return peli
 
 def register_new_movie(file_path, nombre, titulo, director, anio, fecha, hora):
     tree = ET.parse(file_path)

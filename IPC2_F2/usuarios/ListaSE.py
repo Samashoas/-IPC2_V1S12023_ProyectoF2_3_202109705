@@ -15,6 +15,13 @@ class User:
 class LinkedList:
     def __init__(self):
         self.head = None
+    
+    def loop(self):
+        current = self.head
+       
+        while current:
+            yield current.user
+            current = current.next
 
     def append(self, user):
         if not self.head:
@@ -187,4 +194,3 @@ def load_users_from_xml(file_path):
         user_list.append(user)
 
     return user_list
-
