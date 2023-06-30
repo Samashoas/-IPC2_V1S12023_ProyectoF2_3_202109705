@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gestion de Peliculas</title>
+    </head>
+    <body>
+        <form method="POST" action="{% url 'load_xmlP' %}">
+            {% csrf_token %}
+            <button type="submit">Cargar API</button>
+        </form>
+       
+        <h1>Lista de Peliculas</h1>
+        <table>
+            <thead>
+                <th>Categoria</th>
+                <th>Titulo</th>
+                <th>Director</th>
+                <th>Anio</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+            </thead>
+            <tbody>
+                {% for  pelichiquita in Peliculas %}
+                <tr>
+                    <td>{{  pelichiquita.categoria }}</td>
+                    <td>{{  pelichiquita.titulo }}</td>
+                    <td>{{  pelichiquita.director }}</td>
+                    <td>{{  pelichiquita.anio }}</td>
+                    <td>{{  pelichiquita.fecha }}</td>
+                    <td>{{  pelichiquita.hora }}</td>
+                    <td>{{  pelichiquita.imagen }}</td>
+                    <td>{{  pelichiquita.precio }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>No existen registros</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
