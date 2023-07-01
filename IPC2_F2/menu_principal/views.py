@@ -6,3 +6,9 @@ def index(request):
 
 def login(request):
     return render(request,'menu_principal/login.html')
+
+def registro(request):
+    return render(request,'menu_principal/registro.html')
+
+def IndexAdmin(request):
+    return render(request,'menu_principal/menu_admin.html') 
