@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inicio de Sesión</title>
+    <title>Registro de Usuarios</title>
     <style>
         body {
             margin: 0;
@@ -10,7 +10,7 @@
             background: linear-gradient(to bottom right, #ff6f69, #ffcc5c);
         }
 
-        .login-container {
+        .register-container {
             width: 400px;
             margin: 100px auto;
             background-color: #fff;
@@ -19,14 +19,16 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .login-container h2 {
+        .register-container h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #555;
         }
 
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="tel"],
+        .register-container input[type="password"] {
             width: 97%;
             padding: 10px;
             margin-bottom: 10px;
@@ -34,32 +36,32 @@
             border: 1px solid #ccc;
         }
 
-        .login-container a {
-            display: inline-block;
-            width: 96%;
+        .register-container button {
+            width: 100%;
             padding: 10px;
             border: none;
             border-radius: 4px;
             background-color: #555;
             color: #fff;
             font-weight: bold;
-            text-align: center;
-            text-decoration: none;
             cursor: pointer;
         }
 
-        .login-container a:hover {
+        .register-container button:hover {
             background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
+    <div class="register-container">
+        <h2>Registro de Usuarios</h2>
         <form>
-            <input type="text" placeholder="Usuario">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Apellido">
+            <input type="email" placeholder="Correo Electrónico">
+            <input type="tel" placeholder="Teléfono">
             <input type="password" placeholder="Contraseña">
-            <a href="IndexAdmin">Iniciar Sesión</a>
+            <button type="submit">Registrar</button>
         </form>
     </div>
 </body>
