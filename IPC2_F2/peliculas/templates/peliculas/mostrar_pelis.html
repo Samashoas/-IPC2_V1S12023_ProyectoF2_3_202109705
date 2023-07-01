@@ -56,10 +56,29 @@
         button[type="submit"]:hover {
             background-color: #0056b3;
         }
+
+        .button-link {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-top: -5px;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
     </style>
     <title>Gestión de Películas</title>
 </head>
 <body>
+    <a href="{% url 'IndexAdmin' %}" class="button-link">Regresar</a>
+
     <form method="POST" action="{% url 'load_xmlP' %}">
         {% csrf_token %}
         <button type="submit">Cargar API</button>
